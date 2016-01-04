@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       table.string('first_name');
       table.string('last_name');
       table.date('dob');
-      table.int('number');
+      table.string('number');
     })
 
   ]);

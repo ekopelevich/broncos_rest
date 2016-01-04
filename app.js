@@ -1,6 +1,7 @@
 var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
+var port = 3000;
 
 var broncosRoute = require("./routes/broncos");
 
@@ -13,6 +14,6 @@ app.use(bodyParser.urlencoded({
 
 app.use("/broncos", broncosRoute);
 
-app.listen(process.env.PORT, function(){
-    console.log("Running on port ", process.env.PORT);
+app.listen(port, function(){
+    console.log("Running on port ", port);
 });
