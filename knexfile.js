@@ -1,13 +1,10 @@
 module.exports = {
     development: {
         client: 'pg',
-        connection: {
-            database: 'broncosdb',
-            user:     'elanakopelevich'
-        }
+        connection: 'postgres://localhost/broncosdb'
     },
     production: {
         client: 'pg',
-        connection: 'postgres://elanakopelevich@localhost/broncosdb'
+        connection: 'postgres://localhost/broncosdb'
     }
 };

@@ -1,62 +1,26 @@
 exports.seed = function(knex, Promise) {
   return Promise.join(
     // Deletes ALL existing entries
-    knex('broncos').del(),
+    knex('players').del(),
 
     // Inserts seed entries
-    knex('broncos').insert({
+    knex('players').insert({
       first_name: 'John',
       last_name: 'Elway',
-      dob: '6/28/1957',
-      number: '7'
+      start_date: '6/28/1977',
+      jersey_number: 7
     }),
-    knex('broncos').insert({
+    knex('players').insert({
       first_name: 'John',
       last_name: 'Belway',
-      dob: '6/28/1957',
-      number: '12'
+      start_date: '6/28/1997',
+      jersey_number: 25
     }),
-    knex('broncos').insert({
+    knex('players').insert({
       first_name: 'John',
       last_name: 'Delway',
-      dob: '6/28/1957',
-      number: '89'
-    }),
-    knex('broncos').insert({
-      first_name: 'John',
-      last_name: 'Helway',
-      dob: '6/28/1957',
-      number: '46'
-    }),
-    knex('broncos').insert({
-      first_name: 'John',
-      last_name: 'Telway',
-      dob: '6/28/1957',
-      number: '17'
-    }),
-    knex('broncos').insert({
-      first_name: 'John',
-      last_name: 'Alway',
-      dob: '6/28/1957',
-      number: '27'
-    }),
-    knex('broncos').insert({
-      first_name: 'John',
-      last_name: 'Smith',
-      dob: '6/28/1957',
-      number: '6'
-    }),
-    knex('broncos').insert({
-      first_name: 'John',
-      last_name: 'Jones',
-      dob: '6/28/1957',
-      number: '90'
-    }),
-    knex('broncos').insert({
-      first_name: 'John',
-      last_name: 'Gelway',
-      dob: '6/28/1957',
-      number: '73'
+      start_date: '6/28/1987',
+      jersey_number: 67
     })
   );
 };

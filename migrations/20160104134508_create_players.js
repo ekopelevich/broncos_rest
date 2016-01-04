@@ -1,12 +1,11 @@
-
 exports.up = function(knex, Promise) {
   return Promise.all([
-    knex.schema.createTable('broncos', function(table){
+    knex.schema.createTable('players', function(table){
       table.increments('id');
       table.string('first_name');
       table.string('last_name');
-      table.date('dob');
-      table.string('number');
+      table.integer('jersey_number');
+      table.date('start_date');
     })
 
   ]);
@@ -14,6 +13,6 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-    knex.schema.dropTableIfExists('broncos')
+    knex.schema.dropTableIfExists('players')
   ]);
 };

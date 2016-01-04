@@ -1,27 +1,31 @@
-//require('dotenv').load();
-
 var express = require('express');
+var knex = require('../db/knex');
 var router = express.Router();
 
-var knex = require('knex')({
-    client: 'pg',
-    connection: 'postgres://elanakopelevich@localhost/broncosdb'
-});
+function Players(){
+  return knex('broncos');
+} //convenience function will return a new query builder
 
 // get all the broncos
 router.get('/', function(req, res){
-  knex.select().from('broncos')
-      .then( function(broncos){
-          res.status(200).send({broncos: broncos});
+  Players().select()
+    .then(function(broncos){
+      res.status(200).render('players', {
+        title: 'Broncos Players',
+        players: players
+      });
+      //send({broncos: broncos});
   });
 });
 
 // get one bronco
 router.get('/:id', function(req, res){
-    knex.select().from('broncos')
-        .where('id', req.params.id)
-        .then(function(broncos){
-            res.status(200).send({broncos: broncos});
+  Players().where('id', req.params.id)
+    .then(function(broncos){
+      res.status(200).render('player', {
+        title: player.first_name,
+        players: player
+      });
     });
 });
 
